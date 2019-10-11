@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+	<style>
+	table {
+	font-family: arial, sans-serif;
+	border-collapse: collapse;
+	width: 100%;
+	}
+	th{
+	border: 2px solid; #00ccff;
+	text-align: center;
+	padding: 8px;
+	background-color: #ccf5ff;
+	}
+	</style>
+</head>
+<body>
+<div class="container">
+		<h1 class="col-sm-12">Press a button to add an item to the list</h1>
+			<div>
+				<button type="button" class="btn btn-info btn-block" 
+				onclick="myFunction()">Add</button>
+				<button type="button" class="btn btn-info btn-block"
+				onclick="myDeleteFunction()">Remove</button>
+			</div>
+		<br>
+			<table id="table_id">
+			<tr>
+				<th>ToDoList</th>
+				<th>Complete</th>
+				<th>UnComplete</th>
+			</tr>
+</div>
+
+<script>
+function myFunction() {
+  var table = document.getElementById("table_id");
+  var row = table.insertRow(1);
+  var cell1 = row.insertCell(0);
+  var cell2 = row.insertCell(1);
+  var cell3 = row.insertCell(2);
+  cell1.innerHTML = "NEW CELL1";
+  cell2.innerHTML = "NEW CELL2";
+  cell3.innerHTML = "NEW CELL3";
+}
+function myDeleteFunction() {
+  document.getElementById("table_id").deleteRow(1);
+}
+</script>
+</body>
+</html>
